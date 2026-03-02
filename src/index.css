@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Bali Travel Theme - Tropical Luxury */
+    --background: 0 0% 100%;
+    --foreground: 180 100% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 100% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 100% 10%;
+
+    /* Deep Turquoise - Primary brand color */
+    --primary: 180 100% 24%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 180 100% 35%;
+    --primary-dark: 180 100% 18%;
+
+    /* Sand Beige - Secondary warm tone */
+    --secondary: 39 48% 92%;
+    --secondary-foreground: 180 100% 10%;
+    --secondary-dark: 39 48% 80%;
+
+    /* Coral Gold - CTA accent */
+    --accent: 40 97% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 40 97% 45%;
+
+    --muted: 39 30% 95%;
+    --muted-foreground: 180 20% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 39 30% 88%;
+    --input: 39 30% 90%;
+    --ring: 180 100% 24%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(180 100% 24%) 0%, hsl(180 100% 35%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(40 97% 50%) 0%, hsl(30 97% 55%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(0, 124, 124, 0.7) 0%, rgba(0, 124, 124, 0.3) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(0, 124, 124, 0.08);
+    --shadow-card: 0 8px 30px rgba(0, 124, 124, 0.12);
+    --shadow-cta: 0 6px 24px rgba(249, 166, 2, 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 180 100% 5%;
+    --foreground: 39 48% 92%;
+
+    --card: 180 80% 8%;
+    --card-foreground: 39 48% 92%;
+
+    --popover: 180 80% 8%;
+    --popover-foreground: 39 48% 92%;
+
+    --primary: 180 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 30% 15%;
+    --secondary-foreground: 39 48% 92%;
+
+    --accent: 40 97% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 180 30% 12%;
+    --muted-foreground: 39 30% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 30% 18%;
+    --input: 180 30% 18%;
+    --ring: 180 100% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-heading font-bold leading-tight;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-heading font-bold leading-tight;
+  }
+
+  .body-md {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .pulse-gentle {
+    animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-gentle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+}

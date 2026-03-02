@@ -1,0 +1,47 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { SITE_TITLE } from "@/lib/utils";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Packages from "@/components/Packages";
+import Fleet from "@/components/Fleet";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
+const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string })?.scrollTo;
+    if (scrollTo) {
+      // Small delay to ensure the DOM is ready after navigation
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      // Clear the state so it doesn't re-scroll on re-renders
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
+  return (
+    <div className="min-h-screen">
+      <Helmet><title>{SITE_TITLE}</title></Helmet>
+      <Navigation />
+      <Hero />
+      <About />
+      <Services />
+      <Packages />
+      <Fleet />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
