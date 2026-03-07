@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Packages from "@/components/Packages";
 import Fleet from "@/components/Fleet";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -31,13 +32,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet><title>{SITE_TITLE}</title></Helmet>
+      <Helmet>
+        <title>{SITE_TITLE}</title>
+      </Helmet>
       <Navigation />
       <Hero />
       <About />
       <Services />
       <Packages />
       <Fleet />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

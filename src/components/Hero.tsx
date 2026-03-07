@@ -33,9 +33,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container-custom text-center text-white animate-fade-in-up">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-          Discover Bali with
-          <br />
-          Local Experts Who Care
+          Haprabu Travel & Tour
         </h1>
         <p className="text-xl md:text-2xl font-body font-light mb-10 max-w-3xl mx-auto">
           Personalized travel experiences, crafted with love and local insight
