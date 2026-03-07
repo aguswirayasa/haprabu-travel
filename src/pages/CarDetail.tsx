@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { getCarBySlug } from "@/data/carContent";
+import { idrToUsd, formatIDR } from "@/lib/currency";
 import NotFound from "./NotFound";
 import {
   ArrowRight,
@@ -35,7 +36,7 @@ const CarDetail = () => {
   const carTitle = `${car.name} - ${SITE_TITLE}`;
 
   const handleCtaClick = () => {
-    const text = `Hi! I'm interested in renting the "${car.name}" (From $${car.fullDay.priceUSD}/day). Can you share availability and more details?`;
+    const text = `Hi! I'm interested in renting the "${car.name}" (From $${idrToUsd(car.fullDay.priceIDR)}/day). Can you share availability and more details?`;
     window.open(
       `https://wa.me/6285977560660?text=${encodeURIComponent(text)}`,
       "_blank",
@@ -95,7 +96,7 @@ const CarDetail = () => {
                   {/* Badges */}
                   <div className="flex flex-wrap gap-3 mb-4">
                     <span className="inline-block px-3 py-1 bg-primary/90 text-primary-foreground rounded-full text-sm font-medium backdrop-blur-sm">
-                      From ${car.fullDay.priceUSD}/day
+                      From ${idrToUsd(car.fullDay.priceIDR)}/day
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium">
                       <Users className="h-3.5 w-3.5" />
@@ -152,14 +153,14 @@ const CarDetail = () => {
                           </div>
                           <div className="mb-2">
                             <span className="text-3xl font-heading font-bold text-primary">
-                              ${car.fullDay.priceUSD}
+                              ${idrToUsd(car.fullDay.priceIDR)}
                             </span>
                             <span className="text-muted-foreground text-sm ml-1">
                               / car
                             </span>
                           </div>
                           <p className="text-sm text-muted-foreground">
-                            IDR {car.fullDay.priceIDR}/car
+                            {formatIDR(car.fullDay.priceIDR)}/car
                           </p>
                           <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground/70 bg-white/60 px-3 py-1 rounded-full">
                             <Clock className="h-3.5 w-3.5" />
@@ -180,14 +181,14 @@ const CarDetail = () => {
                           </div>
                           <div className="mb-2">
                             <span className="text-3xl font-heading font-bold text-foreground">
-                              ${car.halfDay.priceUSD}
+                              ${idrToUsd(car.halfDay.priceIDR)}
                             </span>
                             <span className="text-muted-foreground text-sm ml-1">
                               / car
                             </span>
                           </div>
                           <p className="text-sm text-muted-foreground">
-                            IDR {car.halfDay.priceIDR}/car
+                            {formatIDR(car.halfDay.priceIDR)}/car
                           </p>
                           <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground/70 bg-secondary/60 px-3 py-1 rounded-full">
                             <Clock className="h-3.5 w-3.5" />
@@ -239,7 +240,7 @@ const CarDetail = () => {
                       </p>
                       <div className="mb-6">
                         <span className="text-4xl font-heading font-bold text-primary">
-                          ${car.fullDay.priceUSD}
+                          ${idrToUsd(car.fullDay.priceIDR)}
                         </span>
                         <span className="text-muted-foreground ml-1">
                           / day

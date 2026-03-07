@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Users, ArrowRight, Snowflake, Wind } from "lucide-react";
 import { getAllCars } from "@/data/carContent";
+import { idrToUsd } from "@/lib/currency";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -62,7 +63,7 @@ const Fleet = () => {
 
                         <div className="flex items-center gap-4 text-sm font-medium mb-3 opacity-90">
                           <span className="bg-primary/90 px-3 py-1 rounded-full backdrop-blur-sm text-primary-foreground">
-                            From ${car.fullDay.priceUSD}/day
+                            From ${idrToUsd(car.fullDay.priceIDR)}/day
                           </span>
                           <span className="flex items-center gap-1.5">
                             <Users className="w-4 h-4" />
@@ -84,7 +85,9 @@ const Fleet = () => {
                                   </>
                                 )}
                               </span>
-                              <span>Half Day: ${car.halfDay.priceUSD}</span>
+                              <span>
+                                Half Day: ${idrToUsd(car.halfDay.priceIDR)}
+                              </span>
                             </div>
                             <div className="flex items-center text-sm font-bold tracking-wide uppercase text-primary-foreground">
                               View Details{" "}

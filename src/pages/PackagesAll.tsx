@@ -6,6 +6,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getAllPackages } from "@/data/travelContent";
+import { idrToUsd } from "@/lib/currency";
 import { cn } from "@/lib/utils";
 import {
   Breadcrumb,
@@ -22,7 +23,9 @@ const PackagesAll = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet><title>All Packages - {SITE_TITLE}</title></Helmet>
+      <Helmet>
+        <title>All Packages - {SITE_TITLE}</title>
+      </Helmet>
       <Navigation />
       <main>
         {/* Simple Hero Section for the page */}
@@ -84,7 +87,7 @@ const PackagesAll = () => {
 
                       <div className="flex items-center gap-4 text-sm font-medium mb-3 opacity-90">
                         <span className="bg-primary/90 px-3 py-1 rounded-full backdrop-blur-sm text-primary-foreground">
-                          Start from ${pkg.priceStartFrom}
+                          Start from ${idrToUsd(pkg.priceStartFromIDR)}
                         </span>
                         {pkg.destinationCount && (
                           <span className="flex items-center gap-1">

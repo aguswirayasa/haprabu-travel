@@ -32,6 +32,11 @@ import tanahLotImage from "@/assets/destinations/tanah-lot.webp";
 import tegenunganWaterfallImage from "@/assets/destinations/tegenungan-waterfall.jpeg";
 import ulunDanuImage from "@/assets/destinations/ulun-danu.webp";
 import ubudSwingImage from "@/assets/destinations/ubung-swing.jpeg";
+import gwkImage from "@/assets/destinations/gwk.webp";
+import melastiBeachImage from "@/assets/destinations/Melasti-Beach-3.webp";
+import pandawaBeachImage from "@/assets/destinations/pandawa-beach.webp";
+import uluwatuTempleImage from "@/assets/destinations/uluwatu-temple.webp";
+import jimbaranSeafoodImage from "@/assets/destinations/jimbaran-seafood.webp";
 
 // --- NEW PACKAGE DATA ---
 
@@ -39,7 +44,7 @@ export type PackageContent = {
   slug: string;
   name: string;
   image: string;
-  priceStartFrom: number;
+  priceStartFromIDR: number;
   destinationCount?: number;
   description: string;
   overview: string;
@@ -53,7 +58,7 @@ export type PackageContent = {
   ctaHref?: string;
   tripInfo?: {
     startTime: string;
-    priceLocal: string;
+    priceLocalIDR: number;
     currencyLabel?: string;
     minimumPax: number;
     specialPriceNote?: string;
@@ -89,8 +94,7 @@ export type PackageContent = {
     routes: {
       from: string;
       to: string;
-      priceIDR: string;
-      priceUSD: string;
+      priceIDR: number;
     }[];
   }[];
   fleetInfo?: {
@@ -107,7 +111,7 @@ const packageList: PackageContent[] = [
     slug: "pickup-dropoff-services",
     name: "Convenient Pickup & Drop-off Services",
     image: pickupImage,
-    priceStartFrom: 8,
+    priceStartFromIDR: 125_000,
     description:
       "All-in-one transfer service — airport pickups, hotel transfers, city tours, and custom rides across Bali.",
     overview:
@@ -168,80 +172,67 @@ const packageList: PackageContent[] = [
           {
             from: "Bandara DPS",
             to: "Kuta / Jimbaran",
-            priceIDR: "125,000",
-            priceUSD: "8",
+            priceIDR: 125_000,
           },
           {
             from: "Bandara DPS",
             to: "Legian / Seminyak",
-            priceIDR: "150,000",
-            priceUSD: "9",
+            priceIDR: 150_000,
           },
           {
             from: "Bandara DPS",
             to: "Canggu",
-            priceIDR: "250,000",
-            priceUSD: "15",
+            priceIDR: 250_000,
           },
           {
             from: "Bandara DPS",
             to: "Kerobokan",
-            priceIDR: "200,000",
-            priceUSD: "12",
+            priceIDR: 200_000,
           },
           {
             from: "Bandara DPS",
             to: "Ubud (Pusat)",
-            priceIDR: "350,000",
-            priceUSD: "21",
+            priceIDR: 350_000,
           },
           {
             from: "Bandara DPS",
             to: "Ubud (Tegalalang)",
-            priceIDR: "400,000",
-            priceUSD: "24",
+            priceIDR: 400_000,
           },
           {
             from: "Bandara DPS",
             to: "Ubud (Lotundoh)",
-            priceIDR: "250,000",
-            priceUSD: "15",
+            priceIDR: 250_000,
           },
           {
             from: "Bandara DPS",
             to: "Sukawati",
-            priceIDR: "250,000",
-            priceUSD: "15",
+            priceIDR: 250_000,
           },
           {
             from: "Bandara DPS",
             to: "Gianyar",
-            priceIDR: "400,000",
-            priceUSD: "24",
+            priceIDR: 400_000,
           },
           {
             from: "Ngurah Rai Airport",
             to: "Tanah Lot / Tabanan",
-            priceIDR: "300,000",
-            priceUSD: "18",
+            priceIDR: 300_000,
           },
           {
             from: "Ngurah Rai Airport",
             to: "Nusa Dua",
-            priceIDR: "200,000",
-            priceUSD: "12",
+            priceIDR: 200_000,
           },
           {
             from: "Ngurah Rai Airport",
             to: "Sanur",
-            priceIDR: "225,000",
-            priceUSD: "14",
+            priceIDR: 225_000,
           },
           {
             from: "Ngurah Rai Airport",
             to: "Ungasan / Pecatu / Uluwatu",
-            priceIDR: "250,000",
-            priceUSD: "15",
+            priceIDR: 250_000,
           },
         ],
       },
@@ -251,26 +242,22 @@ const packageList: PackageContent[] = [
           {
             from: "Kuta",
             to: "Seminyak / Legian / Jimbaran / Kerobokan",
-            priceIDR: "125,000",
-            priceUSD: "8",
+            priceIDR: 125_000,
           },
           {
             from: "Kuta / Jimbaran",
             to: "Canggu",
-            priceIDR: "250,000",
-            priceUSD: "15",
+            priceIDR: 250_000,
           },
           {
             from: "Seminyak",
             to: "Canggu",
-            priceIDR: "225,000",
-            priceUSD: "14",
+            priceIDR: 225_000,
           },
           {
             from: "Jimbaran / Kuta / Legian / Seminyak",
             to: "Ubud",
-            priceIDR: "350,000",
-            priceUSD: "21",
+            priceIDR: 350_000,
           },
         ],
       },
@@ -319,7 +306,7 @@ const packageList: PackageContent[] = [
     slug: "east-nusa-penida-tour",
     name: "East Nusa Penida Tour",
     image: atuhBeachImage,
-    priceStartFrom: 100,
+    priceStartFromIDR: 1_350_000,
     destinationCount: 4,
     description:
       "Visit Nusa Penida's east side beaches and viewpoints in one day.",
@@ -354,7 +341,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "06.30 AM – 07.00 AM",
-      priceLocal: "IDR 1,350,000",
+      priceLocalIDR: 1_350_000,
       currencyLabel: "per person",
       minimumPax: 2,
       specialPriceNote: "Get special price for 4–6 person",
@@ -407,7 +394,7 @@ const packageList: PackageContent[] = [
     slug: "west-nusa-penida-tour",
     name: "West Nusa Penida Tour",
     image: kelingkingBeachImage,
-    priceStartFrom: 90,
+    priceStartFromIDR: 1_100_000,
     destinationCount: 5,
     description:
       "Explore Nusa Penida's iconic west side cliffs, beaches, and natural pools in one day.",
@@ -448,7 +435,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "06.30 AM – 07.00 AM",
-      priceLocal: "IDR 1,100,000",
+      priceLocalIDR: 1_100_000,
       currencyLabel: "per person",
       minimumPax: 2,
       specialPriceNote: "Get special price for 4–6 person",
@@ -502,7 +489,7 @@ const packageList: PackageContent[] = [
     slug: "besakih-lempuyang-tirta-gangga-east-tour",
     name: "Besakih Temple, Lempuyang & Tirta Gangga East Bali Tour",
     image: besakihImage,
-    priceStartFrom: 70,
+    priceStartFromIDR: 850_000,
     destinationCount: 4,
     description:
       "Explore the spiritual and royal heritage of East Bali in one full day.",
@@ -537,7 +524,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.00 AM – 08.30 AM",
-      priceLocal: "IDR 850,000",
+      priceLocalIDR: 850_000,
       currencyLabel: "per person",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
@@ -574,7 +561,7 @@ const packageList: PackageContent[] = [
     slug: "north-bali-tanah-lot-taman-ayun-ulun-danu-bedugul-tour",
     name: "North Bali Tanah Lot Temple, Taman Ayun & Ulun Danu Beratan Bedugul Tour",
     image: tanahLotImage,
-    priceStartFrom: 70,
+    priceStartFromIDR: 850_000,
     destinationCount: 4,
     description:
       "Discover the temples, highlands, and coastal beauty of North and West Bali in one full day.",
@@ -609,7 +596,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.30 AM – 09.00 AM",
-      priceLocal: "IDR 850,000",
+      priceLocalIDR: 850_000,
       currencyLabel: "per person",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
@@ -645,7 +632,7 @@ const packageList: PackageContent[] = [
     slug: "bali-ubud-beauty-traditional-tour",
     name: "Bali Ubud Beauty & Traditional Tour",
     image: barongKrisImage,
-    priceStartFrom: 55,
+    priceStartFromIDR: 650_000,
     destinationCount: 5,
     description:
       "Explore the cultural heart of Bali with traditional performances, art villages, and nature in one day.",
@@ -686,7 +673,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.00 AM – 08.30 AM",
-      priceLocal: "IDR 650,000",
+      priceLocalIDR: 650_000,
       currencyLabel: "per person",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
@@ -722,7 +709,7 @@ const packageList: PackageContent[] = [
     slug: "art-village-batuan-temple-tour",
     name: "Art Village & Batuan Temple Tour",
     image: celukVillageImage,
-    priceStartFrom: 42,
+    priceStartFromIDR: 500_000,
     destinationCount: 3,
     description:
       "A half-day cultural tour through Bali's finest artisan village, ancient temple, and highland coffee plantation.",
@@ -751,7 +738,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.30 AM – 09.00 AM",
-      priceLocal: "IDR 500,000",
+      priceLocalIDR: 500_000,
       currencyLabel: "per car",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per car",
@@ -795,7 +782,7 @@ const packageList: PackageContent[] = [
     slug: "atv-ride-river-rafting",
     name: "ATV Ride & River Rafting Adventure",
     image: atvAdventureImage,
-    priceStartFrom: 65,
+    priceStartFromIDR: 800_000,
     destinationCount: 2,
     description:
       "Combine an adrenaline-packed ATV quad bike ride with thrilling white water rafting in one unforgettable Bali adventure day.",
@@ -818,7 +805,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "09.30 AM",
-      priceLocal: "IDR 800,000",
+      priceLocalIDR: 800_000,
       currencyLabel: "per person (Single ATV)",
       minimumPax: 1,
       specialPriceNote:
@@ -856,7 +843,7 @@ const packageList: PackageContent[] = [
     slug: "ubud-swing-temple-waterfall-tour",
     name: "Ubud Swing, Temple & Waterfall Tour",
     image: monkeyForestImage,
-    priceStartFrom: 58,
+    priceStartFromIDR: 700_000,
     destinationCount: 5,
     description:
       "Swing over the jungle, explore ancient temples, visit artisan villages, and cool off at a stunning waterfall on this full-day Ubud tour.",
@@ -897,7 +884,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.00 AM – 08.30 AM",
-      priceLocal: "IDR 700,000",
+      priceLocalIDR: 700_000,
       currencyLabel: "per car",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per car",
@@ -941,7 +928,7 @@ const packageList: PackageContent[] = [
     slug: "mount-batur-sunrise-jeep-tour",
     name: "Mount Batur Sunrise Jeep Adventure",
     image: jeepBaturImage,
-    priceStartFrom: 29,
+    priceStartFromIDR: 700_000,
     destinationCount: 2,
     description:
       "Watch a magical sunrise over Mount Batur volcano from a rugged 4x4 Jeep and explore the dramatic black lava fields of Kintamani.",
@@ -964,7 +951,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "02.30 AM – 03.00 AM",
-      priceLocal: "IDR 700,000",
+      priceLocalIDR: 700_000,
       currencyLabel: "per car (max 5 people)",
       minimumPax: 2,
       specialPriceNote:
@@ -1027,7 +1014,7 @@ const packageList: PackageContent[] = [
     slug: "ayung-rafting-monkey-forest-tour",
     name: "Ayung River Rafting & Ubud Monkey Forest Tour",
     image: raftingImage,
-    priceStartFrom: 37,
+    priceStartFromIDR: 450_000,
     destinationCount: 2,
     description:
       "Conquer the thrilling rapids of the Ayung River and explore the enchanting Sacred Monkey Forest in one unforgettable Ubud adventure day.",
@@ -1050,7 +1037,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "08.30 AM – 09.00 AM",
-      priceLocal: "IDR 450,000",
+      priceLocalIDR: 450_000,
       currencyLabel: "per person (rafting)",
       minimumPax: 1,
       specialPriceNote:
@@ -1081,6 +1068,82 @@ const packageList: PackageContent[] = [
         label: "Private transport (max 5 people)",
         price: "IDR 650,000/car",
       },
+    ],
+    pickupDropoff: {
+      description:
+        "Available for accommodation in Kuta, Legian, Seminyak, Canggu, Jimbaran, Nusa Dua, Denpasar, Sanur and Ubud. Please contact us if you are staying in remote area.",
+      areas: [
+        "Kuta",
+        "Legian",
+        "Seminyak",
+        "Canggu",
+        "Jimbaran",
+        "Nusa Dua",
+        "Denpasar",
+        "Sanur",
+        "Ubud",
+      ],
+    },
+  },
+  {
+    slug: "uluwatu-tour",
+    name: "Uluwatu Tour",
+    image: uluwatuTempleImage,
+    priceStartFromIDR: 850_000,
+    destinationCount: 5,
+    description:
+      "Explore the stunning south coast of Bali with iconic temples, hidden beaches, dramatic cliffs, and a beachside seafood dinner.",
+    overview:
+      "Spend a full day discovering the breathtaking south coast of Bali on this Uluwatu Tour. Start at the monumental Garuda Wisnu Kencana Cultural Park, unwind on the pristine shores of Melasti Beach and Pandawa Beach, witness a spectacular sunset and Kecak dance performance at the clifftop Uluwatu Temple, and finish with a fresh seafood dinner right on the sand at Jimbaran Bay.",
+
+    destinations: [
+      {
+        title: "GWK (Garuda Wisnu Kencana Cultural Park)",
+        image: gwkImage,
+        description:
+          "Start your South Bali trip at GWK. See the huge 121 meter statue of Lord Vishnu on his Garuda bird, a strong symbol of Balinese culture. Walk through the gardens, watch cultural shows, and enjoy wide views of the ocean.",
+      },
+      {
+        title: "Melasti Beach",
+        image: melastiBeachImage,
+        description:
+          "Relax at Melasti Beach. It has soft white sand, clear blue water, and tall limestone cliffs. A quiet spot to swim, take photos, or simply enjoy the calm sea breeze away from crowds.",
+      },
+      {
+        title: "Pandawa Beach",
+        image: pandawaBeachImage,
+        description:
+          "Visit Pandawa Beach, a beautiful bay hidden behind high cliffs. Large stone statues of the Pandawa brothers stand along the shore. The beach offers white sand, calm water for swimming, and very scenic views.",
+      },
+      {
+        title: "Uluwatu Temple (Kecak Dance)",
+        image: uluwatuTempleImage,
+        description:
+          "Watch the sunset at Uluwatu Temple, an old temple on a high cliff above the ocean. The location is beautiful and sacred, though watch out for the monkeys. Finish the evening with the Kecak dance: a group of men chanting, fire, and the Ramayana story performed as the sky gets dark.",
+      },
+      {
+        title: "Jimbaran Seafood (Dinner)",
+        image: jimbaranSeafoodImage,
+        description:
+          "End the day with dinner on Jimbaran Beach. Sit on the sand and eat fresh grilled seafood such as lobster, prawns, fish, and clams. Waves roll in nearby, soft music plays, and the atmosphere feels relaxed and pleasant.",
+      },
+    ],
+    tripInfo: {
+      startTime: "08.30 AM \u2013 09.00 AM",
+      priceLocalIDR: 850_000,
+      currencyLabel: "per person",
+      minimumPax: 1,
+    },
+    inclusions: [
+      "Fuel",
+      "Air-conditioned & clean interior",
+      "English-speaking driver",
+      "Tour consultancy",
+    ],
+    exclusions: [
+      "Tickets or entrance fees",
+      "Toll roads (if any)",
+      "Your personal expenses",
     ],
     pickupDropoff: {
       description:

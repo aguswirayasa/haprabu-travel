@@ -13,8 +13,7 @@ import alphardImage from "@/assets/cars/Toyota-Alphard.png";
 
 export type CarPricing = {
   hours: number;
-  priceUSD: number;
-  priceIDR: string; // formatted, e.g. "600k"
+  priceIDR: number;
 };
 
 export type CarContent = {
@@ -37,8 +36,8 @@ const carList: CarContent[] = [
     image: avanzaImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 10, priceUSD: 40, priceIDR: "600k" },
-    halfDay: { hours: 5, priceUSD: 26, priceIDR: "400k" },
+    fullDay: { hours: 10, priceIDR: 600_000 },
+    halfDay: { hours: 5, priceIDR: 400_000 },
     inclusions: [
       "Private Car with good A/C",
       "English Speaking Driver",
@@ -54,8 +53,8 @@ const carList: CarContent[] = [
     image: apvImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 10, priceUSD: 50, priceIDR: "750k" },
-    halfDay: { hours: 5, priceUSD: 33, priceIDR: "500k" },
+    fullDay: { hours: 10, priceIDR: 750_000 },
+    halfDay: { hours: 5, priceIDR: 500_000 },
     inclusions: [
       "Private Car with good A/C",
       "English Speaking Driver",
@@ -71,8 +70,8 @@ const carList: CarContent[] = [
     image: stargazerImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 10, priceUSD: 53, priceIDR: "800k" },
-    halfDay: { hours: 5, priceUSD: 40, priceIDR: "600k" },
+    fullDay: { hours: 10, priceIDR: 800_000 },
+    halfDay: { hours: 5, priceIDR: 600_000 },
     inclusions: [
       "Private Car with good A/C",
       "English Speaking Driver",
@@ -88,8 +87,8 @@ const carList: CarContent[] = [
     image: innovaImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 10, priceUSD: 63, priceIDR: "950k" },
-    halfDay: { hours: 5, priceUSD: 50, priceIDR: "750k" },
+    fullDay: { hours: 10, priceIDR: 950_000 },
+    halfDay: { hours: 5, priceIDR: 750_000 },
     inclusions: [
       "Private Car with good A/C",
       "English Speaking Driver",
@@ -105,8 +104,8 @@ const carList: CarContent[] = [
     image: safariImage,
     passengers: "1 – 3 person",
     hasAC: false,
-    fullDay: { hours: 12, priceUSD: 75, priceIDR: "1.125k" },
-    halfDay: { hours: 6, priceUSD: 50, priceIDR: "750k" },
+    fullDay: { hours: 12, priceIDR: 1_125_000 },
+    halfDay: { hours: 6, priceIDR: 750_000 },
     inclusions: [
       "Private Volkswagen Safari Car (No A/C)",
       "English Speaking Driver",
@@ -123,8 +122,8 @@ const carList: CarContent[] = [
     image: xpanderImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 10, priceUSD: 53, priceIDR: "800k" },
-    halfDay: { hours: 5, priceUSD: 40, priceIDR: "600k" },
+    fullDay: { hours: 10, priceIDR: 800_000 },
+    halfDay: { hours: 5, priceIDR: 600_000 },
     inclusions: [
       "Private Car with good A/C",
       "English Speaking Driver",
@@ -140,8 +139,8 @@ const carList: CarContent[] = [
     image: hiaceImage,
     passengers: "1 – 15 person",
     hasAC: true,
-    fullDay: { hours: 12, priceUSD: 100, priceIDR: "1.500k" },
-    halfDay: { hours: 6, priceUSD: 70, priceIDR: "1.050k" },
+    fullDay: { hours: 12, priceIDR: 1_500_000 },
+    halfDay: { hours: 6, priceIDR: 1_050_000 },
     inclusions: [
       "Private Toyota HiAce with good A/C",
       "English Speaking Driver",
@@ -157,8 +156,8 @@ const carList: CarContent[] = [
     image: alphardImage,
     passengers: "1 – 6 person",
     hasAC: true,
-    fullDay: { hours: 12, priceUSD: 233, priceIDR: "3.500k" },
-    halfDay: { hours: 6, priceUSD: 166, priceIDR: "2.500k" },
+    fullDay: { hours: 12, priceIDR: 3_500_000 },
+    halfDay: { hours: 6, priceIDR: 2_500_000 },
     inclusions: [
       "Private Toyota Alphard / Vellfire with Good A/C",
       "Driver",

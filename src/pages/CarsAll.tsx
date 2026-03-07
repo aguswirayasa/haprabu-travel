@@ -6,6 +6,7 @@ import { ArrowRight, Users, Snowflake, Wind } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getAllCars } from "@/data/carContent";
+import { idrToUsd } from "@/lib/currency";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,7 +22,9 @@ const CarsAll = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet><title>Our Fleet - {SITE_TITLE}</title></Helmet>
+      <Helmet>
+        <title>Our Fleet - {SITE_TITLE}</title>
+      </Helmet>
       <Navigation />
       <main>
         {/* Header */}
@@ -81,7 +84,7 @@ const CarsAll = () => {
 
                     <div className="flex items-center gap-4 text-sm font-medium mb-3 opacity-90">
                       <span className="bg-primary/90 px-3 py-1 rounded-full backdrop-blur-sm text-primary-foreground">
-                        From ${car.fullDay.priceUSD}/day
+                        From ${idrToUsd(car.fullDay.priceIDR)}/day
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Users className="w-4 h-4" />
@@ -109,7 +112,9 @@ const CarsAll = () => {
                               </>
                             )}
                           </span>
-                          <span>Half Day: ${car.halfDay.priceUSD}</span>
+                          <span>
+                            Half Day: ${idrToUsd(car.halfDay.priceIDR)}
+                          </span>
                         </div>
                         <div className="flex items-center text-sm font-bold tracking-wide uppercase text-primary-foreground">
                           View Details <ArrowRight className="ml-2 w-4 h-4" />

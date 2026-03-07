@@ -22,6 +22,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getPackageBySlug } from "@/data/travelContent";
+import { idrToUsd, formatIDR } from "@/lib/currency";
 import NotFound from "./NotFound";
 import {
   ArrowRight,
@@ -62,9 +63,10 @@ const PackageDetail = () => {
   const FLEET_ICONS = [Car, Shield, CreditCard, XCircle, UsersRound];
 
   const handleCtaClick = () => {
+    const usd = idrToUsd(pkg.priceStartFromIDR);
     const priceText = pkg.tripInfo
-      ? `Starting from $${pkg.priceStartFrom} / ${pkg.tripInfo.priceLocal} ${pkg.tripInfo.currencyLabel ?? ""}`
-      : `Starting from $${pkg.priceStartFrom}`;
+      ? `Starting from $${usd} / ${formatIDR(pkg.tripInfo.priceLocalIDR)} ${pkg.tripInfo.currencyLabel ?? ""}`
+      : `Starting from $${usd}`;
     const text = `Hi! I'm interested in the "${pkg.name}" package (${priceText}). Can you share more details?`;
     window.open(
       `https://wa.me/6285977560660?text=${encodeURIComponent(text)}`,
@@ -124,12 +126,13 @@ const PackageDetail = () => {
               <div className="max-w-3xl animate-fade-up">
                 {/* Price badge — dual currency when available */}
                 <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1 bg-primary/90 text-primary-foreground rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
-                  <span>Starting from ${pkg.priceStartFrom}</span>
+                  <span>Starting from ${idrToUsd(pkg.priceStartFromIDR)}</span>
                   {pkg.tripInfo && (
                     <>
                       <span className="hidden sm:inline">/</span>
                       <span>
-                        {pkg.tripInfo.priceLocal} {pkg.tripInfo.currencyLabel}
+                        {formatIDR(pkg.tripInfo.priceLocalIDR)}{" "}
+                        {pkg.tripInfo.currencyLabel}
                       </span>
                     </>
                   )}
@@ -285,10 +288,10 @@ const PackageDetail = () => {
                                     <TableCell>{r.from}</TableCell>
                                     <TableCell>{r.to}</TableCell>
                                     <TableCell className="text-right font-semibold text-primary">
-                                      {r.priceIDR}
+                                      {formatIDR(r.priceIDR)}
                                     </TableCell>
                                     <TableCell className="text-right font-semibold text-primary">
-                                      ${r.priceUSD}
+                                      ${idrToUsd(r.priceIDR)}
                                     </TableCell>
                                   </TableRow>
                                 ))}
@@ -309,10 +312,10 @@ const PackageDetail = () => {
                                   {r.to}
                                 </div>
                                 <p className="text-lg font-bold text-primary">
-                                  IDR {r.priceIDR}
+                                  {formatIDR(r.priceIDR)}
                                 </p>
                                 <p className="text-sm font-semibold text-primary/80">
-                                  USD ${r.priceUSD}
+                                  USD ${idrToUsd(r.priceIDR)}
                                 </p>
                               </div>
                             ))}
@@ -387,7 +390,7 @@ const PackageDetail = () => {
                             Tour Price
                           </p>
                           <p className="font-bold text-foreground text-lg">
-                            {pkg.tripInfo.priceLocal}{" "}
+                            {formatIDR(pkg.tripInfo.priceLocalIDR)}{" "}
                             <span className="text-sm font-medium text-muted-foreground">
                               {pkg.tripInfo.currencyLabel} (min{" "}
                               {pkg.tripInfo.minimumPax})
