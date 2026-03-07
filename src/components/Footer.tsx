@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { Facebook, Instagram, Youtube, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/haprabutravel?igsh=NnQ4M2plN3N4dHZo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/18K6RvsS22/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
@@ -48,12 +48,18 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.tiktok.com/@gustingurah5244"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
               >
-                <Youtube className="h-5 w-5" />
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.51a8.27 8.27 0 0 0 4.76 1.5v-3.4a4.85 4.85 0 0 1-1-.08z" />
+                </svg>
               </a>
             </div>
           </div>
@@ -86,7 +92,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 font-body text-white/80">
               <li>+62 859-7756-0660</li>
-              <li>hello@baliexplorer.com</li>
+              <li>agungsurya175111@gmail.com</li>
+              <li>
+                Jl. Patih Nambi IA Gg. Nambi No.18, Ubung Kaja, Kec. Denpasar
+                Utara, Kota Denpasar, Bali 80116
+              </li>
               <li className="pt-2">
                 <a
                   href="https://wa.me/6285977560660"
@@ -105,7 +115,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-sm text-white/60">
-            © {currentYear} Bali Explorer. All rights reserved.
+            © {currentYear} Haprabu Travel and Tour. All rights reserved.
           </p>
           <div className="flex gap-6 font-body text-sm text-white/60">
             <button className="hover:text-white transition-colors">

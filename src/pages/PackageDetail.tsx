@@ -74,7 +74,11 @@ const PackageDetail = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet><title>{pkg.name} - {SITE_TITLE}</title></Helmet>
+      <Helmet>
+        <title>
+          {pkg.name} - {SITE_TITLE}
+        </title>
+      </Helmet>
       <Navigation />
       <main>
         {/* Hero Section */}

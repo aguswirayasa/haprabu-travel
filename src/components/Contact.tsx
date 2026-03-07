@@ -1,10 +1,11 @@
 import { MessageCircle, Mail, Phone, MapPin, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import qrImage from "@/assets/qr.jpeg";
 
 const Contact = () => {
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      "Hello! I'm interested in planning my Bali trip."
+      "Hello! I'm interested in planning my Bali trip.",
     );
     window.open(`https://wa.me/6285977560660?text=${message}`, "_blank");
   };
@@ -17,7 +18,8 @@ const Contact = () => {
             Let's Plan Your Dream Trip
           </h2>
           <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
-            Ready to explore Bali? Get in touch and we'll craft the perfect adventure for you.
+            Ready to explore Bali? Get in touch and we'll craft the perfect
+            adventure for you.
           </p>
         </div>
 
@@ -26,22 +28,21 @@ const Contact = () => {
           <div className="animate-fade-in-up h-full">
             <div className="bg-white p-8 rounded-2xl card-shadow h-full flex flex-col justify-center items-center text-center space-y-6">
               <div className="bg-green-600 p-4 rounded-full inline-block">
-                <QrCode className="h-8 w-8 text-white" />
+                <QrCode className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-heading font-bold text-primary">
                 Connect on WeChat
               </h3>
               <p className="font-body text-muted-foreground max-w-md">
-                Scan our QR code to chat directly with our team on WeChat. We're ready to assist you in English or Chinese.
+                Scan our QR code to chat directly with our team on WeChat. We're
+                ready to assist you in English or Chinese.
               </p>
               <div className="bg-white p-4 rounded-xl border-2 border-dashed border-gray-200">
-                {/* Replace with your actual WeChat QR code image */}
-                <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=WeChatID_Here" 
-                  alt="WeChat QR Code" 
-                  className="w-48 h-48 mx-auto object-contain"
+                <img
+                  src={qrImage}
+                  alt="WeChat QR Code"
+                  className="w-56 h-56 mx-auto object-contain"
                 />
-                <p className="text-sm text-muted-foreground mt-2 font-mono">ID: BaliBreezeTravel</p>
               </div>
             </div>
           </div>
@@ -59,7 +60,8 @@ const Contact = () => {
                 </h3>
               </div>
               <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                Got a few questions about your Bali trip? Message us on WhatsApp. We'll reply fast and help you plan everything.
+                Got a few questions about your Bali trip? Message us on
+                WhatsApp. We'll reply fast and help you plan everything.
               </p>
               <Button
                 size="lg"
@@ -76,14 +78,18 @@ const Contact = () => {
               <h3 className="text-2xl font-heading font-bold text-primary mb-6">
                 Other Ways to Reach Us
               </h3>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-full">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-foreground">Phone</p>
-                  <p className="font-body text-muted-foreground">+62 859-7756-0660</p>
+                  <p className="font-heading font-semibold text-foreground">
+                    Phone
+                  </p>
+                  <p className="font-body text-muted-foreground">
+                    +62 859-7756-0660
+                  </p>
                 </div>
               </div>
 
@@ -92,8 +98,12 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-foreground">Email</p>
-                  <p className="font-body text-muted-foreground">hello@baliexplorer.com</p>
+                  <p className="font-heading font-semibold text-foreground">
+                    Email
+                  </p>
+                  <p className="font-body text-muted-foreground">
+                    agungsurya175111@gmail.com
+                  </p>
                 </div>
               </div>
 
@@ -102,8 +112,16 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-foreground">Office</p>
-                  <p className="font-body text-muted-foreground">Jalan Patih Perum Grahas Sepa No 18,<br />Denpasar Utara, Ubung Kaja</p>
+                  <p className="font-heading font-semibold text-foreground">
+                    Office
+                  </p>
+                  <p className="font-body text-muted-foreground">
+                    Jl. Patih Nambi IA Gg. Nambi No.18,
+                    <br />
+                    Ubung Kaja, Kec. Denpasar Utara,
+                    <br />
+                    Kota Denpasar, Bali 80116
+                  </p>
                 </div>
               </div>
             </div>
