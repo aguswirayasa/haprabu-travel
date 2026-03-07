@@ -40,7 +40,10 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             <h2
               className={`text-2xl font-heading font-bold transition-colors ${
                 isScrolled ? "text-primary" : "text-white"
