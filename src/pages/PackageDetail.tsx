@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/utils";
+import { SITE_TITLE, SITE_URL } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
@@ -77,9 +77,12 @@ const PackageDetail = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>
-          {pkg.name} - {SITE_TITLE}
-        </title>
+        <title>{`${pkg.name} - ${SITE_TITLE}`}</title>
+        <meta name="description" content={pkg.description} />
+        <link rel="canonical" href={`${SITE_URL}/package/${pkg.slug}`} />
+        <meta property="og:title" content={`${pkg.name} - ${SITE_TITLE}`} />
+        <meta property="og:description" content={pkg.description} />
+        <meta property="og:url" content={`${SITE_URL}/package/${pkg.slug}`} />
       </Helmet>
       <Navigation />
       <main>
@@ -463,6 +466,7 @@ const PackageDetail = () => {
                               <img
                                 src={item.image}
                                 alt={item.title}
+                                loading="lazy"
                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                               />
                             </div>

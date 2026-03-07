@@ -48,6 +48,7 @@ const Packages = () => {
                     <img
                       src={pkg.image}
                       alt={pkg.name}
+                      loading="lazy"
                       className={cn(
                         "h-full w-full object-cover transition-transform duration-700 ease-out",
                         hoveredIndex === index ? "scale-110" : "scale-100",

@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/utils";
+import { SITE_TITLE, SITE_URL } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
@@ -47,6 +47,11 @@ const CarDetail = () => {
     <>
       <Helmet>
         <title>{carTitle}</title>
+        <meta name="description" content={car.description} />
+        <link rel="canonical" href={`${SITE_URL}/car/${car.slug}`} />
+        <meta property="og:title" content={carTitle} />
+        <meta property="og:description" content={car.description} />
+        <meta property="og:url" content={`${SITE_URL}/car/${car.slug}`} />
       </Helmet>
       <div className="min-h-screen bg-background text-foreground">
         <Navigation />

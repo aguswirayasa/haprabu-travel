@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/utils";
+import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from "@/lib/utils";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -33,7 +33,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>{SITE_TITLE}</title>
+        <title>{`${SITE_TITLE} | Authentic Bali Travel Experiences`}</title>
+        <meta name="description" content={SITE_DESCRIPTION} />
+        <link rel="canonical" href={`${SITE_URL}/`} />
+        <meta
+          property="og:title"
+          content={`${SITE_TITLE} | Authentic Bali Travel Experiences`}
+        />
+        <meta property="og:description" content={SITE_DESCRIPTION} />
+        <meta property="og:url" content={`${SITE_URL}/`} />
       </Helmet>
       <Navigation />
       <Hero />

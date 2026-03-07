@@ -19,6 +19,7 @@ const About = () => {
               <img
                 src={guideImage}
                 alt="Local Balinese travel guide"
+                loading="lazy"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl">

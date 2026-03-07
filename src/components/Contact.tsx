@@ -41,6 +41,7 @@ const Contact = () => {
                 <img
                   src={qrImage}
                   alt="WeChat QR Code"
+                  loading="lazy"
                   className="w-56 h-56 mx-auto object-contain"
                 />
               </div>

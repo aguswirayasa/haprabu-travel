@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/utils";
+import { SITE_TITLE, SITE_URL } from "@/lib/utils";
 import { ArrowRight, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -24,7 +24,21 @@ const PackagesAll = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>All Packages - {SITE_TITLE}</title>
+        <title>{`All Tour Packages - ${SITE_TITLE}`}</title>
+        <meta
+          name="description"
+          content="Browse our complete collection of curated Bali tour packages. Find the perfect itinerary for your dream vacation with Haprabu Travel."
+        />
+        <link rel="canonical" href={`${SITE_URL}/packages`} />
+        <meta
+          property="og:title"
+          content={`All Tour Packages - ${SITE_TITLE}`}
+        />
+        <meta
+          property="og:description"
+          content="Browse our complete collection of curated Bali tour packages."
+        />
+        <meta property="og:url" content={`${SITE_URL}/packages`} />
       </Helmet>
       <Navigation />
       <main>
@@ -71,6 +85,7 @@ const PackagesAll = () => {
                   <img
                     src={pkg.image}
                     alt={pkg.name}
+                    loading="lazy"
                     className={cn(
                       "h-full w-full object-cover transition-transform duration-700 ease-out",
                       hoveredIndex === index ? "scale-110" : "scale-100",

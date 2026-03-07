@@ -49,6 +49,7 @@ const Fleet = () => {
                       <img
                         src={car.image}
                         alt={car.name}
+                        loading="lazy"
                         className="absolute inset-0 h-full scale-90 w-full object-fit transition-transform duration-700 ease-out group-hover:scale-110"
                       />
 

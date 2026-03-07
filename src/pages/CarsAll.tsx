@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/utils";
+import { SITE_TITLE, SITE_URL } from "@/lib/utils";
 import { ArrowRight, Users, Snowflake, Wind } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -23,7 +23,18 @@ const CarsAll = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Our Fleet - {SITE_TITLE}</title>
+        <title>{`Our Fleet - ${SITE_TITLE}`}</title>
+        <meta
+          name="description"
+          content="Browse our full fleet of Bali rental vehicles with experienced English-speaking drivers and all fuel included. From compact MPVs to luxury coaches."
+        />
+        <link rel="canonical" href={`${SITE_URL}/cars`} />
+        <meta property="og:title" content={`Our Fleet - ${SITE_TITLE}`} />
+        <meta
+          property="og:description"
+          content="Browse our full fleet of Bali rental vehicles with experienced drivers."
+        />
+        <meta property="og:url" content={`${SITE_URL}/cars`} />
       </Helmet>
       <Navigation />
       <main>
@@ -70,6 +81,7 @@ const CarsAll = () => {
                   <img
                     src={car.image}
                     alt={car.name}
+                    loading="lazy"
                     className="absolute inset-0 h-full scale-90 w-full object-fit transition-transform duration-700 ease-out group-hover:scale-110"
                   />
 
