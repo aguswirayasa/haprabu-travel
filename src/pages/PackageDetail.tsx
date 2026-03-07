@@ -67,7 +67,7 @@ const PackageDetail = () => {
       : `Starting from $${pkg.priceStartFrom}`;
     const text = `Hi! I'm interested in the "${pkg.name}" package (${priceText}). Can you share more details?`;
     window.open(
-      `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`,
+      `https://wa.me/6285977560660?text=${encodeURIComponent(text)}`,
       "_blank",
     );
   };

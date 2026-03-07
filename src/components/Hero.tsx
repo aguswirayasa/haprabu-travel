@@ -12,7 +12,7 @@ const Hero = () => {
 
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Hello! I'm interested in planning my Bali trip.",
+      "https://wa.me/6285977560660?text=Hello! I'm interested in planning my Bali trip.",
       "_blank",
     );
   };

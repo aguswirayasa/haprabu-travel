@@ -85,11 +85,11 @@ const Footer = () => {
               Get in Touch
             </h4>
             <ul className="space-y-3 font-body text-white/80">
-              <li>+62 812 3456 7890</li>
+              <li>+62 859-7756-0660</li>
               <li>hello@baliexplorer.com</li>
               <li className="pt-2">
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6285977560660"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition-colors"

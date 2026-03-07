@@ -6,7 +6,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       "Hello! I'm interested in planning my Bali trip."
     );
-    window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
+    window.open(`https://wa.me/6285977560660?text=${message}`, "_blank");
   };
 
   return (
@@ -83,7 +83,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-foreground">Phone</p>
-                  <p className="font-body text-muted-foreground">+62 812 3456 7890</p>
+                  <p className="font-body text-muted-foreground">+62 859-7756-0660</p>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-foreground">Office</p>
-                  <p className="font-body text-muted-foreground">Jl. Raya Ubud No. 123<br />Ubud, Bali 80571</p>
+                  <p className="font-body text-muted-foreground">Jalan Patih Perum Grahas Sepa No 18,<br />Denpasar Utara, Ubung Kaja</p>
                 </div>
               </div>
             </div>
