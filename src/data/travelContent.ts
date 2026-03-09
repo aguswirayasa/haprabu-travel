@@ -951,7 +951,7 @@ const packageList: PackageContent[] = [
     ],
     tripInfo: {
       startTime: "02.30 AM – 03.00 AM",
-      priceLocalIDR: 700_000,
+      priceLocalIDR: 800_000,
       currencyLabel: "per car (max 5 people)",
       minimumPax: 2,
       specialPriceNote:
