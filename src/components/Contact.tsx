@@ -117,7 +117,7 @@ const Contact = () => {
                     Office
                   </p>
                   <p className="font-body text-muted-foreground">
-                    Jl. Patih Nambi IA Gg. Nambi No.18,
+                    Jl. Patih Nambi Perum Graha Sepa IA No.18,
                     <br />
                     Ubung Kaja, Kec. Denpasar Utara,
                     <br />
