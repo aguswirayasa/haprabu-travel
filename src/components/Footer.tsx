@@ -48,7 +48,7 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.tiktok.com/@gustingurah5244"
+                href="https://www.tiktok.com/@haprabu.travel.an?_r=1&_t=ZS-94XVhvqJzkr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
