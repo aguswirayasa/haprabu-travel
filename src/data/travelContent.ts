@@ -342,7 +342,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "06.30 AM – 07.00 AM",
       priceLocalIDR: 1_350_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 2,
       specialPriceNote: "Get special price for 4–6 person",
     },
@@ -436,7 +436,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "06.30 AM – 07.00 AM",
       priceLocalIDR: 1_100_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 2,
       specialPriceNote: "Get special price for 4–6 person",
     },
@@ -525,7 +525,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "08.00 AM – 08.30 AM",
       priceLocalIDR: 850_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
     },
@@ -597,7 +597,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "08.30 AM – 09.00 AM",
       priceLocalIDR: 850_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
     },
@@ -632,7 +632,7 @@ const packageList: PackageContent[] = [
     slug: "bali-ubud-beauty-traditional-tour",
     name: "Bali Ubud Beauty & Traditional Tour",
     image: barongKrisImage,
-    priceStartFromIDR: 650_000,
+    priceStartFromIDR: 700_000,
     destinationCount: 5,
     description:
       "Explore the cultural heart of Bali with traditional performances, art villages, and nature in one day.",
@@ -674,7 +674,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "08.00 AM – 08.30 AM",
       priceLocalIDR: 650_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 1,
       specialPriceNote: "Maximum 5 people per group",
     },
@@ -1131,7 +1131,7 @@ const packageList: PackageContent[] = [
     tripInfo: {
       startTime: "08.30 AM \u2013 09.00 AM",
       priceLocalIDR: 850_000,
-      currencyLabel: "per person",
+      currencyLabel: "per day",
       minimumPax: 1,
     },
     inclusions: [
